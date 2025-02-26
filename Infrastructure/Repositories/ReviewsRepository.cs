@@ -1,17 +1,16 @@
 ﻿using Application.Entities;
 using Application.Interfaces;
+using Application.Interfaces.IRepositories;
 using MongoDB.Driver;
 using Shared.DTOs;
 using Shared.Enums;
 
-public class ReviewRepository : IReviewsRepository
-{
-    private readonly IMongoCollection<ReviewEntity> _reviewsCollection;
+namespace Infrastructure.Repositories;
 
-    public ReviewRepository(MongoDbService mongoDbService)
-    {
-        _reviewsCollection = mongoDbService.Database.GetCollection<ReviewEntity>("reviews");
-    }
+public class ReviewRepository(MongoDbService mongoDbService) : IReviewsRepository
+{
+    private readonly IMongoCollection<ReviewEntity> _reviewsCollection = mongoDbService.Database.GetCollection<ReviewEntity>("reviews");
+
     public async Task<ReviewDto> CreateAsync(CreateReviewDto createDto)
     {
         var reviewEntity = new ReviewEntity

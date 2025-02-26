@@ -19,5 +19,3 @@ public class MongoDbService
 
     public IMongoDatabase Database => _database;
 }
-
-
