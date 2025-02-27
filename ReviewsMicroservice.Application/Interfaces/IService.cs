@@ -1,6 +1,6 @@
 ﻿namespace Application.Interfaces;
 
-public interface IRepository<TEntity, TCreateDto, TUpdateDto, TDto> 
+public interface IService<TEntity, in TCreateDto, in TUpdateDto, TDto> 
     where TEntity : class
 {
     Task<TDto> CreateAsync(TCreateDto createDto);

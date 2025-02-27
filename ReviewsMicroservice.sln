@@ -1,12 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{7A397202-3DAE-47CD-95C6-B5B31A7E0438}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReviewsMicroservice.Infrastructure", "ReviewsMicroservice.Infrastructure\ReviewsMicroservice.Infrastructure.csproj", "{7A397202-3DAE-47CD-95C6-B5B31A7E0438}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{BF04CD85-0E17-463F-8098-13D4ED741BDC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReviewsMicroservice.Shared", "ReviewsMicroservice.Shared\ReviewsMicroservice.Shared.csproj", "{BF04CD85-0E17-463F-8098-13D4ED741BDC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{00353D1E-67B5-4DF7-A9FA-DF7084909946}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReviewsMicroservice.Application", "ReviewsMicroservice.Application\ReviewsMicroservice.Application.csproj", "{00353D1E-67B5-4DF7-A9FA-DF7084909946}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "WebAPI\WebAPI.csproj", "{F6F93857-2DD2-401C-AC19-03E4C5B72AFD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReviewsMicroservice.WebAPI", "ReviewsMicroservice.WebAPI\ReviewsMicroservice.WebAPI.csproj", "{F6F93857-2DD2-401C-AC19-03E4C5B72AFD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

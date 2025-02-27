@@ -5,6 +5,7 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
       <UserSecretsId>d526de5b-f201-452f-916f-cb691df06bf0</UserSecretsId>
+      <RootNamespace>WebAPI</RootNamespace>
   </PropertyGroup>
 
     <ItemGroup>
@@ -14,8 +15,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Application\Application.csproj" />
-      <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
+      <ProjectReference Include="..\ReviewsMicroservice.Application\ReviewsMicroservice.Application.csproj" />
+      <ProjectReference Include="..\ReviewsMicroservice.Infrastructure\ReviewsMicroservice.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>
