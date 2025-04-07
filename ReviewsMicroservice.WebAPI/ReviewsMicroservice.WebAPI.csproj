@@ -6,6 +6,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
       <UserSecretsId>d526de5b-f201-452f-916f-cb691df06bf0</UserSecretsId>
       <RootNamespace>WebAPI</RootNamespace>
+      <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 
     <ItemGroup>
@@ -17,6 +18,12 @@
     <ItemGroup>
       <ProjectReference Include="..\ReviewsMicroservice.Application\ReviewsMicroservice.Application.csproj" />
       <ProjectReference Include="..\ReviewsMicroservice.Infrastructure\ReviewsMicroservice.Infrastructure.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="..\.dockerignore">
+        <Link>.dockerignore</Link>
+      </Content>
     </ItemGroup>
 
 </Project>
