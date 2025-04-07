@@ -5,5 +5,6 @@ namespace Application.Interfaces.IServices
 {
     public interface IReviewService : IService<ReviewEntity, CreateReviewDto, UpdateReviewDto, ReviewDto>
     {
+        Task<ReviewDto> GetByAppointmentIdAsync(Guid appointmentId);
     }
 }

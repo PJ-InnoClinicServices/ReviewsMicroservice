@@ -1,5 +1,4 @@
 ﻿using Application.Entities;
-using Application.Interfaces;
 using Application.Interfaces.IRepositories;
 using MongoDB.Driver;
 using Shared.DTOs;
@@ -19,7 +18,10 @@ public class ReviewRepository(MongoDbService mongoDbService) : IReviewsRepositor
             Rating = createDto.Rating,
             Status = ReviewStatus.Pending,  
             CreatedAt = DateTime.UtcNow,
-            UpdatedAt = DateTime.UtcNow
+            UpdatedAt = DateTime.UtcNow,
+            DoctorId =  createDto.DoctorId,
+            PatientId = createDto.PatientId,
+            AppointmentId = createDto.AppointmentId,
         };
 
         await _reviewsCollection.InsertOneAsync(reviewEntity);
@@ -53,6 +55,25 @@ public class ReviewRepository(MongoDbService mongoDbService) : IReviewsRepositor
             CreatedAt = reviewEntity.CreatedAt,
             UpdatedAt = reviewEntity.UpdatedAt
         };
+    }
+    
+    public async Task<ReviewDto> GetByAppointmentIdAsync(Guid appointmentId)
+    {
+        var reviewEntity = await _reviewsCollection.Find(r => r.AppointmentId == appointmentId).FirstOrDefaultAsync();
+       
+        if (reviewEntity == null)
+            return null;
+        
+        return new ReviewDto
+        {
+            Id = reviewEntity.Id,
+            Comment = reviewEntity.Comment,
+            Rating = reviewEntity.Rating,
+            Status = reviewEntity.Status,
+            CreatedAt = reviewEntity.CreatedAt,
+            UpdatedAt = reviewEntity.UpdatedAt
+        };
+
     }
 
     public async Task<IEnumerable<ReviewDto>> GetAllAsync()

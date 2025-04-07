@@ -28,6 +28,16 @@ public class ReviewsController(IReviewService reviewService) : ControllerBase
             return NotFound();
         return Ok(review);
     }
+    
+    
+    [HttpGet("appointment/{appointmentId}")]
+    [ProducesResponseType(typeof(IEnumerable<ReviewDto>), 200)]
+    [ProducesResponseType(404)]
+    public async Task<IActionResult> GetByAppointmentIdAsync(Guid appointmentId)
+    {
+        var review = await reviewService.GetByAppointmentIdAsync(appointmentId);
+        return Ok(review);
+    }
 
     [HttpGet]
     [ProducesResponseType(typeof(IEnumerable<ReviewDto>), 200)]

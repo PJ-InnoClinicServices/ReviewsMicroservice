@@ -9,6 +9,6 @@ public record CreateReviewDto
     public Guid AppointmentId { get; set; }    
     public Rating Rating { get; set; }
     public string Comment { get; set; }
-    public string ReviewerName { get; set; }
-    public ReviewStatus Status { get; set; }
+
+    public ReviewStatus Status { get; set; } = ReviewStatus.Pending;
 }
