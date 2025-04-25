@@ -17,6 +17,11 @@ public class ReviewService(IRepository<ReviewEntity, CreateReviewDto, UpdateRevi
     {
         return repository.GetByIdAsync(id);
     }
+    
+    public async Task<ReviewDto> GetByAppointmentIdAsync(Guid appointmentId)
+    {
+        return await repository.GetByAppointmentIdAsync(appointmentId);
+    }
 
     public Task<IEnumerable<ReviewDto>> GetAllAsync()
     {

@@ -8,4 +8,6 @@ public interface IReviewsRepository : IRepository<ReviewEntity, CreateReviewDto,
 {
     Task<IEnumerable<ReviewDto>> GetReviewsByStatusAsync(ReviewStatus status);
     Task<IEnumerable<ReviewDto>> GetReviewsByRatingAsync(Rating rating);
+    Task<ReviewDto> GetByAppointmentIdAsync(Guid appointmentId);
+
 }

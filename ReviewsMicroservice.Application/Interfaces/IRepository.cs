@@ -8,4 +8,5 @@ public interface IRepository<TEntity, in TCreateDto, in TUpdateDto, TDto>
     Task<IEnumerable<TDto>> GetAllAsync();
     Task<TDto> UpdateAsync(TUpdateDto updateDto);
     Task<bool> DeleteAsync(Guid id);
+    Task<TDto> GetByAppointmentIdAsync(Guid appointmentId);
 }

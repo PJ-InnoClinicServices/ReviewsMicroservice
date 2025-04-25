@@ -1,3 +1,4 @@
+using AppointmentREST.Extension;
 using Infrastructure;
 using WebAPI.Extensions;
 
@@ -11,11 +12,13 @@ builder.Services.AddSwaggerGen();
 builder.Services.RegisterRepositories();
 builder.Services.RegisterServices();
 
+builder.Services.AddCorsPolicy(builder.Configuration);
+
 builder.Services.AddSingleton<MongoDbService>();
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment() || app.Environment.EnvironmentName == "Container")
 {
     builder.Configuration.AddUserSecrets<Program>();
     app.UseSwagger();
@@ -23,6 +26,7 @@ if (app.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
 }
 
+app.UseCors("AllowLocalhost");
 app.MapControllers();
 app.UseHttpsRedirection();
 
