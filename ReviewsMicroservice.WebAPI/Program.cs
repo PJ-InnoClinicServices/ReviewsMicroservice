@@ -18,7 +18,7 @@ builder.Services.AddSingleton<MongoDbService>();
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment() || app.Environment.EnvironmentName == "Container")
 {
     builder.Configuration.AddUserSecrets<Program>();
     app.UseSwagger();

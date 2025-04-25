@@ -1,0 +1,7 @@
+﻿services:
+  reviewsmicroservice.webapi:
+    image: reviews-microservice
+    build:
+      context: .
+      dockerfile: ReviewsMicroservice.WebAPI/Dockerfile
+
